@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvivxavdwj51w"]
+
+[ext_resource type="Script" uid="uid://5bxl1lrl6lsd" path="res://addons/hwtycoon_modtool/research/research.gd" id="1_4oopq"]
+[ext_resource type="Script" uid="uid://d4fqoru66goyg" path="res://addons/hwtycoon_modtool/research/research_graph_edit.gd" id="1_036o3"]
+[ext_resource type="Script" uid="uid://cobswtcsto7p3" path="res://addons/hwtycoon_modtool/research/research_item_list.gd" id="2_ylj5x"]
+
+[node name="ModTool" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Research" type="MarginContainer" parent="TabContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_4oopq")
+metadata/_tab_index = 0
+
+[node name="SplitContainer" type="SplitContainer" parent="TabContainer/Research"]
+layout_mode = 2
+split_offset = 300
+
+[node name="ResearchItemList" type="ItemList" parent="TabContainer/Research/SplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_ylj5x")
+
+[node name="ResearchGraphEdit" type="GraphEdit" parent="TabContainer/Research/SplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+scroll_offset = Vector2(-8, -38)
+right_disconnects = true
+script = ExtResource("1_036o3")

@@ -30,6 +30,10 @@ window/size/initial_position_type=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/hwtycoon_modtool/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false
